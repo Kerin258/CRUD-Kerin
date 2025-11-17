@@ -1,0 +1,115 @@
+/*
+ * Hoja de Estilos Personalizada (tabla.css)
+ * * 1. Estilos Globales
+ * 2. Estilos de la Tabla
+ * 3. Estilos de los Modales
+ * 4. Estilos del Overlay de Carga (Spinner)
+*/
+
+/* --- 1. Estilos Globales --- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #eef2f7;
+    color: #333;
+    /* Suavizado de fuentes para un look más profesional */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+    color: #0d6efd;
+    font-weight: 300;
+}
+
+#newPersonButton {
+    transition: all 0.3s ease;
+}
+
+/* --- 2. Estilos de la Tabla --- */
+#table-container {
+    overflow-x: auto; /* Scroll horizontal en móviles */
+    background-color: #fff;
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Sombra profesional */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse; 
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ecf0f1;
+    vertical-align: middle;
+}
+
+th {
+    background-color: #0d6efd;
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Redondea las esquinas del header de la tabla */
+table thead tr:first-child th:first-child {
+    border-top-left-radius: 8px;
+}
+table thead tr:first-child th:last-child {
+    border-top-right-radius: 8px;
+}
+
+/* Estilo de filas "cebreadas" (pares) */
+tbody tr:nth-child(even) {
+    background-color: #f7f9fa;
+}
+
+/* Transición suave al pasar el mouse */
+tbody tr {
+    transition: background-color 0.2s ease-in-out;
+}
+
+/* Efecto hover y cursor 'pointer' para filas */
+tbody tr:hover {
+    background-color: #e9f2f8;
+    cursor: pointer;
+}
+
+/* Celda de Acciones (Botones) */
+td.actions-cell {
+    white-space: nowrap; /* Evita que los botones se partan */
+    width: 1%;
+}
+
+td.actions-cell .btn {
+    margin-right: 5px;
+}
+
+/* --- 3. Estilos de los Modales --- */
+.modal-content {
+    border-radius: 8px;
+    border: none;
+}
+
+/* --- 4. Estilos del Overlay de Carga (Spinner) --- */
+#table-loader {
+    position: absolute; /* Se superpone sobre el 'div' padre */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.7); 
+    z-index: 10;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px; 
+    margin-bottom: 3rem; 
+}
+
+/* Clase de utilidad de Bootstrap para ocultar/mostrar */
+#table-loader.d-none {
+    display: none !important;
+}
